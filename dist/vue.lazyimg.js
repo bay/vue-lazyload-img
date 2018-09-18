@@ -179,7 +179,7 @@ var Lazyload = {
                 if (fade)
                     el.style.opacity = '0';
                 if (!el.src) {
-                    el.src = 'data:image/gifbase64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+                    el.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
                 }
                 var speedInfo = {
                     lastPos: document.body.getBoundingClientRect().top,
@@ -225,8 +225,8 @@ var Lazyload = {
             update: function (el, binding) {
                 if (compareSrc(el.src, binding.value))
                     return;
-                el.style.opacity = '0';
-                el.style.transition = "opacity " + time / 2 + "ms";
+                if (!fade)
+                    return;
                 el.newSrc = binding.value;
                 setTimeout(function () {
                     compute(el, time / 2, preload);
