@@ -225,8 +225,6 @@ var Lazyload = {
             update: function (el, binding) {
                 if (compareSrc(el.src, binding.value))
                     return;
-                if (!fade)
-                    return;
                 el.newSrc = binding.value;
                 setTimeout(function () {
                     compute(el, time / 2, preload);
