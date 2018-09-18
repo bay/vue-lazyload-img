@@ -102,7 +102,7 @@ const Lazyload:PluginObject<LazyLoadOptions> = {
                 if (fade)
                     el.style.opacity = '0'
                 if (!el.src) {
-                    el.src = 'data:image/gifbase64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+                    el.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
                 }
                 let speedInfo = {
                     lastPos: document.body.getBoundingClientRect().top,
