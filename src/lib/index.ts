@@ -147,6 +147,7 @@ const Lazyload:PluginObject<LazyLoadOptions> = {
             },
             update (el: ImageElement, binding: VNodeDirective) {
                 if (compareSrc(el.src,binding.value)) return
+                if (! fade) return
                 el.style.opacity = '0'
                 el.style.transition = `opacity ${time/2}ms`
                 el.newSrc = binding.value
